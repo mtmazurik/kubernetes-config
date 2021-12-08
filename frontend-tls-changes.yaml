@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx
+spec:
+  tls:                                # add those 4 lines
+  - hosts:                            #
+      - ingress.local                 #
+    secretName: ingress-local-tls     #
+  rules:
+  - host: frontend.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: myingress-ingress-nginx-controller
+            port:
+              number: 443 
