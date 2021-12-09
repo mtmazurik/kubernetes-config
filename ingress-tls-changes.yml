@@ -6,15 +6,15 @@ spec:
   tls:                                # add those 4 lines
   - hosts:                            #
       - ingress.local                 #
-    secretName: ingress-local-tls     #
+    secretName: ingress-local-tls     # Did you create your secret?
   rules:
-  - host: frontend.local
+  - host: ingress.local
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: myingress-ingress-nginx-controller
+            name: nginx
             port:
               number: 443 
