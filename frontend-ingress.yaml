@@ -11,9 +11,9 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: frontend-svc
+            name: frontend
             port:
-              number: 443
+              number: 80
   tls:                                # add next 4 lines for TLS on ingress
   - hosts:                            
       - frontend.onprem.cloudcomputingassociates.net
