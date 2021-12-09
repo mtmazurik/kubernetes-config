@@ -1,4 +1,5 @@
 configInline:
+  namespace: metallb-system
   address-pools:
    - name: default
      protocol: layer2
