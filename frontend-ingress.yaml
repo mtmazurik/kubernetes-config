@@ -17,4 +17,4 @@ spec:
   tls:                                # add next 4 lines for TLS on ingress
   - hosts:                            
       - frontend.onprem.cloudcomputingassociates.net
-    secretName: ingress-tls     # Did you create your secret?
+    secretName: ingress-tls           # Did you create your secret?
