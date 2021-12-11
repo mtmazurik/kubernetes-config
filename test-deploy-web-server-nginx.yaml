@@ -17,3 +17,18 @@ spec:
       containers:
       - image: nginx
         name: nginx
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-websvr
+  namespace: default
+spec:
+  type: ClusterIP
+  selector:
+    app: nginx-main 
+  ports:
+  - port: 80
+    name: http
+  - port: 443
+    name: https

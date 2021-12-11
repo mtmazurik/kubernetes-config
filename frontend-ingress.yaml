@@ -1,7 +1,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-nginx-websvr
+  name: frontend
+  annotations:
+        nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - host: frontend.onprem.cloudcomputingassociates.net
@@ -11,6 +13,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: nginx-websvr
-            port: 
+            name: frontend
+            port:
               number: 80
